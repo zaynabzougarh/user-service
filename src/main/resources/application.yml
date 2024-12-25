@@ -1,0 +1,13 @@
+keycloak:
+  auth-server-url: http://localhost:9090  # URL du serveur Keycloak
+  realm: Customer                             # Nom de votre royaume Keycloak
+  resource: Customer                          # Nom de votre client dans Keycloak
+  public-client: true                         # Si c'est un client public (non client secret)
+  bearer-only: true                           # Si votre application est uniquement configurée pour valider des tokens Bearer
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/Customer  # URI du fournisseur de jetons JWT
